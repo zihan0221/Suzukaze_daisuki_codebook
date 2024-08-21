@@ -1,0 +1,392 @@
+% use xelatex
+
+\documentclass[a4paper,10pt,twocolumn,oneside]{article}
+\setlength{\columnsep}{10pt}                                                              %兩欄模式的間距
+\setlength{\columnseprule}{0pt}                                                                %兩欄模式間格線粗細
+
+\usepackage{amsthm}								%定義，例題
+\usepackage{amssymb}
+%\usepackage[margin=2cm]{geometry}
+\usepackage{fontspec}								%設定字體
+\usepackage{color}
+\usepackage[x11names]{xcolor}
+\usepackage{listings}								%顯示code用的
+%\usepackage[Glenn]{fncychap}						%排版，頁面模板
+\usepackage{fancyhdr}								%設定頁首頁尾
+\usepackage{graphicx}								%Graphic
+\usepackage{enumerate}
+\usepackage{titlesec}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage[CheckSingle, CJKmath]{xeCJK}
+% \usepackage{CJKulem}
+%\usepackage[T1]{fontenc}
+\titlespacing{\section}{0cm}{0cm}{0cm}
+\titlespacing{\subsection}{0cm}{0cm}{0cm}
+\usepackage{amsmath, courier, listings, fancyhdr, graphicx}
+\topmargin=0pt
+\headsep=5pt
+\textheight=780pt
+\footskip=0pt
+\voffset=-40pt
+\textwidth=545pt
+\marginparsep=0pt
+\marginparwidth=0pt
+\marginparpush=0pt
+\oddsidemargin=0pt
+\evensidemargin=0pt
+\hoffset=-42pt
+\setmainfont [
+    Path = .fonts/ttf/,
+    UprightFont = *-Regular,
+    BoldFont = *-Bold,
+    ItalicFont = *-Italic
+  ] {Consolas}
+
+\setmonofont [        
+    Path = .fonts/ttf/,
+    UprightFont = *-Regular,
+  ] {Monaco}
+
+
+%\renewcommand\listfigurename{圖目錄}
+%\renewcommand\listtablename{表目錄} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\setCJKmainfont{微軟正黑體}
+\setCJKmainfont[
+    Path = .fonts/ttf/,
+    UprightFont = *,
+    BoldFont = *bd,
+    ItalicFont = *l
+]{msjh}
+
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip = 0pt plus 1pt				%設定段落之間的距離
+\setcounter{secnumdepth}{3}						%目錄顯示第三層
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter
+\lst@CCPutMacro\lst@ProcessOther {"2D}{\lst@ttfamily{-{}}{-{}}}
+\@empty\z@\@empty
+\makeatother
+\lstset{											% Code顯示
+language=C++,										% the language of the code
+basicstyle=\footnotesize\ttfamily, 						% the size of the fonts that are used for the code
+%numbers=left,										% where to put the line-numbers
+numberstyle=\footnotesize,						% the size of the fonts that are used for the line-numbers
+stepnumber=1,										% the step between two line-numbers. If it's 1, each line  will be numbered
+numbersep=5pt,										% how far the line-numbers are from the code
+backgroundcolor=\color{white},					% choose the background color. You must add \usepackage{color}
+showspaces=false,									% show spaces adding particular underscores
+showstringspaces=false,							% underline spaces within strings
+showtabs=false,									% show tabs within strings adding particular underscores
+frame=false,											% adds a frame around the code
+tabsize=2,											% sets default tabsize to 2 spaces
+captionpos=b,										% sets the caption-position to bottom
+breaklines=true,									% sets automatic line breaking
+breakatwhitespace=false,							% sets if automatic breaks should only happen at whitespace
+escapeinside={\%*}{*)},							% if you want to add a comment within your code
+morekeywords={*},									% if you want to add more keywords to the set
+keywordstyle=\bfseries\color{Blue1},
+commentstyle=\itshape\color{Red4},
+stringstyle=\itshape\color{Green4},
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\pagestyle{fancy}
+\fancyfoot{}
+%\fancyfoot[R]{\includegraphics[width=20pt]{ironwood.jpg}}
+\fancyhead[L]{NTOU Suzukaze\_daisuki}
+\fancyhead[R]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\contentsname}{Contents} 
+
+\scriptsize
+\tableofcontents
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Basic}
+\subsection{Default code}
+\lstinputlisting{basic/default_code.cpp}
+\subsection{Linux 對拍}
+\lstinputlisting{basic/stress_test_Linux.sh}
+\subsection{Windows 對拍}
+\lstinputlisting{basic/stress_test_Windows.bat}
+\subsection{builtin 函數}
+\lstinputlisting{basic/builtin_function.cpp}
+\subsection{輸入輸出}
+\lstinputlisting{basic/io.cpp}
+\subsection{Python 輸入輸出}
+\lstinputlisting{basic/python_input.py}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Data Structure}
+\subsection{Link-Cut Tree}
+\lstinputlisting{datastructure/link_cut_tree.cpp}
+\subsection{持久化線段樹}
+\lstinputlisting{datastructure/persistent_seg_tree.cpp}
+\subsection{Treap}
+\lstinputlisting{datastructure/treap.cpp}
+\subsection{線段樹}
+\lstinputlisting{datastructure/seg_tree.cpp}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Flow}
+\subsection{Dinic}
+\lstinputlisting{flow/dinic.cpp}
+\subsection{匈牙利}
+\lstinputlisting{flow/hungarian.cpp}
+\subsection{KM}
+\lstinputlisting{flow/km.cpp}
+\subsection{MCMF}
+\lstinputlisting{flow/mcmf.cpp}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{幾何}
+\subsection{點宣告}
+\lstinputlisting{geometry/pt_declare.cpp}
+\subsection{矩形面積}
+\lstinputlisting{geometry/area_of_rect.cpp}
+\subsection{最近點對}
+\lstinputlisting{geometry/closest_pair_of_points.cpp}
+\subsection{凸包}
+\lstinputlisting{geometry/convex_hull.cpp}
+\subsection{兩直線交點}
+\lstinputlisting{geometry/intersection_of_two_lines.cpp}
+\subsection{兩線段交點}
+\lstinputlisting{geometry/intersection_of_two_segments.cpp}
+\subsection{李超線段樹}
+\lstinputlisting{geometry/li_chao_seg_tree.cpp}
+\subsection{最小包覆圓}
+\lstinputlisting{geometry/minimal_circle.cpp}
+\subsection{最小包覆球}
+\lstinputlisting{geometry/minimal_ball.cpp}
+\subsection{旋轉卡尺}
+\lstinputlisting{geometry/rotating_caliper.cpp}
+\subsection{Circle Cover}
+\lstinputlisting{geometry/CircleCover.cpp}
+\subsection{Convex Hull Trick}
+\lstinputlisting{geometry/ConvexHulltrick.cpp}
+\subsection{Half Plane Intersection}
+\lstinputlisting{geometry/Half_plane_intersection.cpp}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{圖論}
+\subsection{BCC}
+\lstinputlisting{graph/bcc.cpp}
+\subsection{重心剖分}
+\lstinputlisting{graph/centroid_decom.cpp}
+\subsection{輕重鍊剖分}
+\lstinputlisting{graph/Heavy_light_decomposition.cpp}
+\subsection{歐拉路徑}
+\lstinputlisting{graph/euler_path.cpp}
+\subsection{極大團}
+\lstinputlisting{graph/maximal_clique.cpp}
+\subsection{最大團}
+\lstinputlisting{graph/maximum_clique.cpp}
+\subsection{SCC}
+\lstinputlisting{graph/scc.cpp}
+\subsection{SPFA}
+\lstinputlisting{graph/spfa.cpp}
+\subsection{差分約束}
+\input{graph/system_of_differences.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{數論}
+\subsection{離散根號}
+\lstinputlisting{math/discrete_sqrt.cpp}
+\subsection{ex-crt}
+\lstinputlisting{math/excrt.cpp}
+\subsection{ex-gcd}
+\lstinputlisting{math/exgcd.cpp}
+\subsection{FFT}
+\lstinputlisting{math/fft.cpp}
+\subsection{高斯消去法}
+\lstinputlisting{math/gaussian_elim.cpp}
+\subsection{喬瑟夫問題}
+\lstinputlisting{math/josephus.cpp}
+\subsection{定理}
+\input{math/math_theorem.tex}
+\subsection{Miller Rabin}
+\lstinputlisting{math/miller_rabin.cpp}
+\subsection{NTT}
+\lstinputlisting{math/ntt.cpp}
+\subsection{Pollard's Rho}
+\lstinputlisting{math/pollard_rho.cpp}
+\subsection{質數}
+\lstinputlisting{math/primes.cpp}
+\subsection{phi}
+\lstinputlisting{math/phi.cpp}
+\subsection{矩陣快速冪}
+\lstinputlisting{math/matrix_fast_pow.cpp}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{字串}
+\subsection{KMP}
+\lstinputlisting{string/kmp.cpp}
+\subsection{馬拉車}
+\lstinputlisting{string/manacher.cpp}
+\subsection{回文樹}
+\lstinputlisting{string/pal_tree.cpp}
+\subsection{SA}
+\lstinputlisting{string/sa.cpp}
+\subsection{SAM}
+\lstinputlisting{string/sam.cpp}
+\subsection{樹哈希}
+\lstinputlisting{string/tree_hash.cpp}
+\subsection{trie}
+\lstinputlisting{string/trie.cpp}
+\subsection{Z-value}
+\lstinputlisting{string/z_value.cpp}
+\subsection{minRotation}
+\lstinputlisting{string/minrotation.cpp}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{DP}
+\subsection{數位 dp}
+\lstinputlisting{dp/digit.cpp}
+\subsection{SOS dp}
+\lstinputlisting{dp/sos.cpp}
+\subsection{p-median}
+\lstinputlisting{dp/p_median.cpp}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Other}
+\subsection{黑魔法、名次樹}
+\lstinputlisting{other/black_magic.cpp}
+%\subsection{Dancing Links}
+%\lstinputlisting{other/dlx.cpp}
+\subsection{Hiber Curve}
+\lstinputlisting{other/hibert_curve.cpp}
+%\subsection{模擬退火}
+%\lstinputlisting{other/simulated_annealing.cpp}   
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter
+\def\grd@save@target#1{%
+  \def\grd@target{#1}}
+\def\grd@save@start#1{%
+  \def\grd@start{#1}}
+\tikzset{
+  grid with coordinates/.style={
+    to path={%
+      \pgfextra{%
+        \edef\grd@@target{(\tikztotarget)}%
+        \tikz@scan@one@point\grd@save@target\grd@@target\relax
+        \edef\grd@@start{(\tikztostart)}%
+        \tikz@scan@one@point\grd@save@start\grd@@start\relax
+        \draw[minor help lines] (\tikztostart) grid (\tikztotarget);
+        \draw[major help lines] (\tikztostart) grid (\tikztotarget);
+        \grd@start
+        \pgfmathsetmacro{\grd@xa}{\the\pgf@x/1cm}
+        \pgfmathsetmacro{\grd@ya}{\the\pgf@y/1cm}
+        \grd@target
+        \pgfmathsetmacro{\grd@xb}{\the\pgf@x/1cm}
+        \pgfmathsetmacro{\grd@yb}{\the\pgf@y/1cm}
+        \pgfmathsetmacro{\grd@xc}{\grd@xa + \pgfkeysvalueof{/tikz/grid with coordinates/major step}}
+        \pgfmathsetmacro{\grd@yc}{\grd@ya + \pgfkeysvalueof{/tikz/grid with coordinates/major step}}
+        \foreach \x in {\grd@xa,\grd@xc,...,\grd@xb}
+        \node[anchor=north] at (\x,\grd@ya) {\pgfmathprintnumber{\x}};
+        \foreach \y in {\grd@ya,\grd@yc,...,\grd@yb}
+        \node[anchor=east] at (\grd@xa,\y) {\pgfmathprintnumber{\y}};
+      }
+    }
+  },
+  minor help lines/.style={
+    help lines,
+    step=\pgfkeysvalueof{/tikz/grid with coordinates/minor step}
+  },
+  major help lines/.style={
+    help lines,
+    line width=\pgfkeysvalueof{/tikz/grid with coordinates/major line width},
+    step=\pgfkeysvalueof{/tikz/grid with coordinates/major step}
+  },
+  grid with coordinates/.cd,
+  minor step/.initial=.2,
+  major step/.initial=1,
+  major line width/.initial=2pt,
+}
+\makeatother
+
+\vphantom
+\newline
+\newpage
+\vphantom
+\newline
+\newpage
+\begin{tikzpicture}
+\draw[help lines,step=.2] (-9,-6) grid (9,6);
+\draw[help lines,line width=.6pt,step=1] (-9,-6) grid (9,6);
+\draw[help lines,line width=1.8pt,step=1] (0,-6) grid (0,6);
+\draw[help lines,line width=1.8pt,step=1] (-9,0) grid (9,0);
+\foreach \x in {-9,-8,-7,-6,-5,-4,-3,-2,-1, ,1,2,3,4,5,6,7,8,9}
+ \node[anchor=north] at (\x,0) {\x};
+\foreach \y in {-6,-5,-4,-3,-2,-1, ,1,2,3,4,5,6}
+ \node[anchor=east] at (0,\y) {\y};
+\end{tikzpicture}
+
+\begin{tikzpicture}
+\draw[help lines,step=.2] (-9,-6) grid (9,6);
+\draw[help lines,line width=.6pt,step=1] (-9,-6) grid (9,6);
+\draw[help lines,line width=1.8pt,step=1] (0,-6) grid (0,6);
+\draw[help lines,line width=1.8pt,step=1] (-9,0) grid (9,0);
+\foreach \x in {-9,-8,-7,-6,-5,-4,-3,-2,-1, ,1,2,3,4,5,6,7,8,9}
+ \node[anchor=north] at (\x,0) {\x};
+\foreach \y in {-6,-5,-4,-3,-2,-1, ,1,2,3,4,5,6}
+ \node[anchor=east] at (0,\y) {\y};
+\end{tikzpicture}
+
+\vphantom
+\newline
+\newpage
+\vphantom
+\newline
+\newpage
+\begin{tikzpicture}
+\draw[help lines,step=.2] (-9,-6) grid (9,6);
+\draw[help lines,line width=.6pt,step=1] (-9,-6) grid (9,6);
+\draw[help lines,line width=1.8pt,step=1] (0,-6) grid (0,6);
+\draw[help lines,line width=1.8pt,step=1] (-9,0) grid (9,0);
+\foreach \x in {-9,-8,-7,-6,-5,-4,-3,-2,-1, ,1,2,3,4,5,6,7,8,9}
+ \node[anchor=north] at (\x,0) {\x};
+\foreach \y in {-6,-5,-4,-3,-2,-1, ,1,2,3,4,5,6}
+ \node[anchor=east] at (0,\y) {\y};
+\end{tikzpicture}
+
+\begin{tikzpicture}
+\draw[help lines,step=.2] (-9,-6) grid (9,6);
+\draw[help lines,line width=.6pt,step=1] (-9,-6) grid (9,6);
+\draw[help lines,line width=1.8pt,step=1] (0,-6) grid (0,6);
+\draw[help lines,line width=1.8pt,step=1] (-9,0) grid (9,0);
+\foreach \x in {-9,-8,-7,-6,-5,-4,-3,-2,-1, ,1,2,3,4,5,6,7,8,9}
+ \node[anchor=north] at (\x,0) {\x};
+\foreach \y in {-6,-5,-4,-3,-2,-1, ,1,2,3,4,5,6}
+ \node[anchor=east] at (0,\y) {\y};
+\end{tikzpicture}
+\vphantom
+\newline
+\newpage
+\vphantom
+\newline
+\newpage
+\begin{tikzpicture}
+\draw[help lines,step=.2] (-9,-6) grid (9,6);
+\draw[help lines,line width=.6pt,step=1] (-9,-6) grid (9,6);
+\draw[help lines,line width=1.8pt,step=1] (0,-6) grid (0,6);
+\draw[help lines,line width=1.8pt,step=1] (-9,0) grid (9,0);
+\foreach \x in {-9,-8,-7,-6,-5,-4,-3,-2,-1, ,1,2,3,4,5,6,7,8,9}
+ \node[anchor=north] at (\x,0) {\x};
+\foreach \y in {-6,-5,-4,-3,-2,-1, ,1,2,3,4,5,6}
+ \node[anchor=east] at (0,\y) {\y};
+\end{tikzpicture}
+
+\begin{tikzpicture}
+\draw[help lines,step=.2] (-9,-6) grid (9,6);
+\draw[help lines,line width=.6pt,step=1] (-9,-6) grid (9,6);
+\draw[help lines,line width=1.8pt,step=1] (0,-6) grid (0,6);
+\draw[help lines,line width=1.8pt,step=1] (-9,0) grid (9,0);
+\foreach \x in {-9,-8,-7,-6,-5,-4,-3,-2,-1, ,1,2,3,4,5,6,7,8,9}
+ \node[anchor=north] at (\x,0) {\x};
+\foreach \y in {-6,-5,-4,-3,-2,-1, ,1,2,3,4,5,6}
+ \node[anchor=east] at (0,\y) {\y};
+\end{tikzpicture}
+
+\end{document}
+
+
+
