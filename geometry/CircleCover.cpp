@@ -3,7 +3,7 @@
 struct CircleCover{
   int C; Circ c[ N ]; //填入C(圓數量),c(圓陣列)
   bool g[ N ][ N ], overlap[ N ][ N ];
-  // Area[i] : area covered by at least i circles
+  // Area[i] 為至少包括 i 個圓的覆蓋面積
   D Area[ N ];
   void init( int _C ){ C = _C; }
   bool CCinter( Circ& a , Circ& b , Pt& p1 , Pt& p2 ){

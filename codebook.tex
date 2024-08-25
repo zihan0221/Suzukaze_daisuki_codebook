@@ -124,8 +124,8 @@ stringstyle=\itshape\color{Green4},
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Data Structure}
-\subsection{Link-Cut Tree}
-\lstinputlisting{datastructure/link_cut_tree.cpp}
+%\subsection{Link-Cut Tree}
+%\lstinputlisting{datastructure/link_cut_tree.cpp}
 \subsection{持久化線段樹}
 \lstinputlisting{datastructure/persistent_seg_tree.cpp}
 \subsection{Treap}
@@ -164,22 +164,30 @@ stringstyle=\itshape\color{Green4},
 \lstinputlisting{geometry/minimal_ball.cpp}
 \subsection{旋轉卡尺}
 \lstinputlisting{geometry/rotating_caliper.cpp}
-\subsection{Circle Cover}
+\subsection{Circle Cover }
 \lstinputlisting{geometry/CircleCover.cpp}
 \subsection{Convex Hull Trick}
 \lstinputlisting{geometry/ConvexHulltrick.cpp}
 \subsection{Half Plane Intersection}
 \lstinputlisting{geometry/Half_plane_intersection.cpp}
+\subsection{Minkowski Sum}
+\lstinputlisting{geometry/Minkowski_Sum.cpp}
+\subsection{多邊形聯集面積}
+\lstinputlisting{geometry/polyUnion.cpp}
+%\subsection{Polygon Cover}
+%\lstinputlisting{geometry/UnionOfPolygons.cpp}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{圖論}
 \subsection{BCC}
 \lstinputlisting{graph/bcc.cpp}
 \subsection{重心剖分}
 \lstinputlisting{graph/centroid_decom.cpp}
-\subsection{輕重鍊剖分}
-\lstinputlisting{graph/Heavy_light_decomposition.cpp}
-\subsection{歐拉路徑}
-\lstinputlisting{graph/euler_path.cpp}
+%\subsection{輕重鍊剖分}
+%\lstinputlisting{graph/Heavy_light_decomposition.cpp}
+%\subsection{歐拉路徑}
+%\lstinputlisting{graph/euler_path.cpp}
 \subsection{極大團}
 \lstinputlisting{graph/maximal_clique.cpp}
 \subsection{最大團}
@@ -188,6 +196,13 @@ stringstyle=\itshape\color{Green4},
 \lstinputlisting{graph/scc.cpp}
 \subsection{SPFA}
 \lstinputlisting{graph/spfa.cpp}
+\subsection{domainTree} 
+\lstinputlisting{graph/domainTree.cpp}
+\subsection{曼哈頓最小生成樹}
+\lstinputlisting{graph/ManhattanMST.cpp}
+
+\subsection{2-SAT}
+\input{graph/twoSAT.tex}
 \subsection{差分約束}
 \input{graph/system_of_differences.tex}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -252,7 +267,7 @@ stringstyle=\itshape\color{Green4},
 \lstinputlisting{other/black_magic.cpp}
 %\subsection{Dancing Links}
 %\lstinputlisting{other/dlx.cpp}
-\subsection{Hiber Curve}
+\subsection{Hilbert curve}
 \lstinputlisting{other/hibert_curve.cpp}
 %\subsection{模擬退火}
 %\lstinputlisting{other/simulated_annealing.cpp}   
@@ -358,6 +373,174 @@ stringstyle=\itshape\color{Green4},
 \foreach \y in {-6,-5,-4,-3,-2,-1, ,1,2,3,4,5,6}
  \node[anchor=east] at (0,\y) {\y};
 \end{tikzpicture}
+\vphantom
+\newline
+\newpage
+\vphantom
+\newline
+\newpage
+\begin{tikzpicture}
+\draw[help lines,step=.2] (-9,-6) grid (9,6);
+\draw[help lines,line width=.6pt,step=1] (-9,-6) grid (9,6);
+\draw[help lines,line width=1.8pt,step=1] (0,-6) grid (0,6);
+\draw[help lines,line width=1.8pt,step=1] (-9,0) grid (9,0);
+\foreach \x in {-9,-8,-7,-6,-5,-4,-3,-2,-1, ,1,2,3,4,5,6,7,8,9}
+ \node[anchor=north] at (\x,0) {\x};
+\foreach \y in {-6,-5,-4,-3,-2,-1, ,1,2,3,4,5,6}
+ \node[anchor=east] at (0,\y) {\y};
+\end{tikzpicture}
+
+\begin{tikzpicture}
+\draw[help lines,step=.2] (-9,-6) grid (9,6);
+\draw[help lines,line width=.6pt,step=1] (-9,-6) grid (9,6);
+\draw[help lines,line width=1.8pt,step=1] (0,-6) grid (0,6);
+\draw[help lines,line width=1.8pt,step=1] (-9,0) grid (9,0);
+\foreach \x in {-9,-8,-7,-6,-5,-4,-3,-2,-1, ,1,2,3,4,5,6,7,8,9}
+ \node[anchor=north] at (\x,0) {\x};
+\foreach \y in {-6,-5,-4,-3,-2,-1, ,1,2,3,4,5,6}
+ \node[anchor=east] at (0,\y) {\y};
+\end{tikzpicture}
+
+\vphantom
+\newline
+\newpage
+\vphantom
+\newline
+\newpage
+\begin{tikzpicture}
+\draw[help lines,step=.2] (-9,-6) grid (9,6);
+\draw[help lines,line width=.6pt,step=1] (-9,-6) grid (9,6);
+\draw[help lines,line width=1.8pt,step=1] (0,-6) grid (0,6);
+\draw[help lines,line width=1.8pt,step=1] (-9,0) grid (9,0);
+\foreach \x in {-9,-8,-7,-6,-5,-4,-3,-2,-1, ,1,2,3,4,5,6,7,8,9}
+ \node[anchor=north] at (\x,0) {\x};
+\foreach \y in {-6,-5,-4,-3,-2,-1, ,1,2,3,4,5,6}
+ \node[anchor=east] at (0,\y) {\y};
+\end{tikzpicture}
+
+\begin{tikzpicture}
+\draw[help lines,step=.2] (-9,-6) grid (9,6);
+\draw[help lines,line width=.6pt,step=1] (-9,-6) grid (9,6);
+\draw[help lines,line width=1.8pt,step=1] (0,-6) grid (0,6);
+\draw[help lines,line width=1.8pt,step=1] (-9,0) grid (9,0);
+\foreach \x in {-9,-8,-7,-6,-5,-4,-3,-2,-1, ,1,2,3,4,5,6,7,8,9}
+ \node[anchor=north] at (\x,0) {\x};
+\foreach \y in {-6,-5,-4,-3,-2,-1, ,1,2,3,4,5,6}
+ \node[anchor=east] at (0,\y) {\y};
+\end{tikzpicture}
+
+\vphantom
+\newline
+\newpage
+\vphantom
+\newline
+\newpage
+\begin{tikzpicture}
+\draw[help lines,step=.2] (-9,-6) grid (9,6);
+\draw[help lines,line width=.6pt,step=1] (-9,-6) grid (9,6);
+\draw[help lines,line width=1.8pt,step=1] (0,-6) grid (0,6);
+\draw[help lines,line width=1.8pt,step=1] (-9,0) grid (9,0);
+\foreach \x in {-9,-8,-7,-6,-5,-4,-3,-2,-1, ,1,2,3,4,5,6,7,8,9}
+ \node[anchor=north] at (\x,0) {\x};
+\foreach \y in {-6,-5,-4,-3,-2,-1, ,1,2,3,4,5,6}
+ \node[anchor=east] at (0,\y) {\y};
+\end{tikzpicture}
+
+\begin{tikzpicture}
+\draw[help lines,step=.2] (-9,-6) grid (9,6);
+\draw[help lines,line width=.6pt,step=1] (-9,-6) grid (9,6);
+\draw[help lines,line width=1.8pt,step=1] (0,-6) grid (0,6);
+\draw[help lines,line width=1.8pt,step=1] (-9,0) grid (9,0);
+\foreach \x in {-9,-8,-7,-6,-5,-4,-3,-2,-1, ,1,2,3,4,5,6,7,8,9}
+ \node[anchor=north] at (\x,0) {\x};
+\foreach \y in {-6,-5,-4,-3,-2,-1, ,1,2,3,4,5,6}
+ \node[anchor=east] at (0,\y) {\y};
+\end{tikzpicture}
+
+\vphantom
+\newline
+\newpage
+\vphantom
+\newline
+\newpage
+\begin{tikzpicture}
+\draw[help lines,step=.2] (-9,-6) grid (9,6);
+\draw[help lines,line width=.6pt,step=1] (-9,-6) grid (9,6);
+\draw[help lines,line width=1.8pt,step=1] (0,-6) grid (0,6);
+\draw[help lines,line width=1.8pt,step=1] (-9,0) grid (9,0);
+\foreach \x in {-9,-8,-7,-6,-5,-4,-3,-2,-1, ,1,2,3,4,5,6,7,8,9}
+ \node[anchor=north] at (\x,0) {\x};
+\foreach \y in {-6,-5,-4,-3,-2,-1, ,1,2,3,4,5,6}
+ \node[anchor=east] at (0,\y) {\y};
+\end{tikzpicture}
+
+\begin{tikzpicture}
+\draw[help lines,step=.2] (-9,-6) grid (9,6);
+\draw[help lines,line width=.6pt,step=1] (-9,-6) grid (9,6);
+\draw[help lines,line width=1.8pt,step=1] (0,-6) grid (0,6);
+\draw[help lines,line width=1.8pt,step=1] (-9,0) grid (9,0);
+\foreach \x in {-9,-8,-7,-6,-5,-4,-3,-2,-1, ,1,2,3,4,5,6,7,8,9}
+ \node[anchor=north] at (\x,0) {\x};
+\foreach \y in {-6,-5,-4,-3,-2,-1, ,1,2,3,4,5,6}
+ \node[anchor=east] at (0,\y) {\y};
+\end{tikzpicture}
+
+\vphantom
+\newline
+\newpage
+\vphantom
+\newline
+\newpage
+\begin{tikzpicture}
+\draw[help lines,step=.2] (-9,-6) grid (9,6);
+\draw[help lines,line width=.6pt,step=1] (-9,-6) grid (9,6);
+\draw[help lines,line width=1.8pt,step=1] (0,-6) grid (0,6);
+\draw[help lines,line width=1.8pt,step=1] (-9,0) grid (9,0);
+\foreach \x in {-9,-8,-7,-6,-5,-4,-3,-2,-1, ,1,2,3,4,5,6,7,8,9}
+ \node[anchor=north] at (\x,0) {\x};
+\foreach \y in {-6,-5,-4,-3,-2,-1, ,1,2,3,4,5,6}
+ \node[anchor=east] at (0,\y) {\y};
+\end{tikzpicture}
+
+\begin{tikzpicture}
+\draw[help lines,step=.2] (-9,-6) grid (9,6);
+\draw[help lines,line width=.6pt,step=1] (-9,-6) grid (9,6);
+\draw[help lines,line width=1.8pt,step=1] (0,-6) grid (0,6);
+\draw[help lines,line width=1.8pt,step=1] (-9,0) grid (9,0);
+\foreach \x in {-9,-8,-7,-6,-5,-4,-3,-2,-1, ,1,2,3,4,5,6,7,8,9}
+ \node[anchor=north] at (\x,0) {\x};
+\foreach \y in {-6,-5,-4,-3,-2,-1, ,1,2,3,4,5,6}
+ \node[anchor=east] at (0,\y) {\y};
+\end{tikzpicture}
+
+\vphantom
+\newline
+\newpage
+\vphantom
+\newline
+\newpage
+\begin{tikzpicture}
+\draw[help lines,step=.2] (-9,-6) grid (9,6);
+\draw[help lines,line width=.6pt,step=1] (-9,-6) grid (9,6);
+\draw[help lines,line width=1.8pt,step=1] (0,-6) grid (0,6);
+\draw[help lines,line width=1.8pt,step=1] (-9,0) grid (9,0);
+\foreach \x in {-9,-8,-7,-6,-5,-4,-3,-2,-1, ,1,2,3,4,5,6,7,8,9}
+ \node[anchor=north] at (\x,0) {\x};
+\foreach \y in {-6,-5,-4,-3,-2,-1, ,1,2,3,4,5,6}
+ \node[anchor=east] at (0,\y) {\y};
+\end{tikzpicture}
+
+\begin{tikzpicture}
+\draw[help lines,step=.2] (-9,-6) grid (9,6);
+\draw[help lines,line width=.6pt,step=1] (-9,-6) grid (9,6);
+\draw[help lines,line width=1.8pt,step=1] (0,-6) grid (0,6);
+\draw[help lines,line width=1.8pt,step=1] (-9,0) grid (9,0);
+\foreach \x in {-9,-8,-7,-6,-5,-4,-3,-2,-1, ,1,2,3,4,5,6,7,8,9}
+ \node[anchor=north] at (\x,0) {\x};
+\foreach \y in {-6,-5,-4,-3,-2,-1, ,1,2,3,4,5,6}
+ \node[anchor=east] at (0,\y) {\y};
+\end{tikzpicture}
+
 \vphantom
 \newline
 \newpage

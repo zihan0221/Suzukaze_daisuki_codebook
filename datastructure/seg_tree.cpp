@@ -27,7 +27,7 @@ struct Seg{
         build(cr,mid+1,r,arr);
         pull(i,l,r);
     }
-    Seg(vector<int>& arr){
+    void init(vector<int>& arr){
         seg.resize(arr.size()*4);
         tag.resize(arr.size()*4);
         build(0,0,arr.size()-1,arr);

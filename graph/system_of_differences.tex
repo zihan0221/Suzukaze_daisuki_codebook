@@ -1,1 +1,8 @@
-約束條件 $V_j-V_i\le W$ addEdge($V_i, V_j, W $) and run bellman-ford or spfa
+約束條件 : 
+\begin{itemize}
+    \item $V_j-V_i\le W$ addEdge($i, j, W $)
+    \item $V_j-V_i\ge W$ addEdge($j, i, -W $)
+    \item $V_j = V_i$ addEdge($i, j, 0 $),($j, i, 0 $)
+\end{itemize}
+
+接著跑SPFA,Bellman-Ford
