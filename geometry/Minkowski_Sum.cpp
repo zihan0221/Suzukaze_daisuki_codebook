@@ -1,3 +1,4 @@
+// P, Q, R(return) are counterclockwise order convex polygon
 vector<Pt> minkowski(vector<Pt> P, vector<Pt> Q) {
     auto cmp = [&](Pt a, Pt b) {
         return Pt{a.y, a.x} < Pt{b.y, b.x};
