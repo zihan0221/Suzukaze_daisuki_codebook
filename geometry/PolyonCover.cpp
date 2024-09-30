@@ -6,8 +6,6 @@ int PtSide(Pt p, Line L) {
 bool argcmp(const Pt &a, const Pt &b) { // arg(a) < arg(b)
   int f = (Pt{a.y, -a.x} > Pt{} ? 1 : -1) * (a != Pt{});
   int g = (Pt{b.y, -b.x} > Pt{} ? 1 : -1) * (b != Pt{});
-  // int f = (Pt{a.y, -a.x} > Pt{} ? 1 : -1) * (a != Pt{});
-  // int g = (Pt{b.y, -b.x} > Pt{} ? 1 : -1) * (b != Pt{});
   return f == g ? (a ^ b) > 0 : f < g;
 }
 Pt LineInter(Line l, Line m) {
@@ -17,9 +15,9 @@ Pt LineInter(Line l, Line m) {
 #ifndef all
   #define all(x) (x).begin(), (x).end()
 #endif
-vector < double > PolyUnion(vector < vector < Pt >> & P) {
-  int n = P.size();
-  vector < double > Area(n + 1); //Area[i] 為至少包括 i 個多邊形的覆蓋面積
+vector < double > PolyUnion(const vector < vector < Pt >> & P) {
+  const int n = P.size();
+  vector < double > Area(n + 1);
   vector < Line > Ls;
   for (int i = 0; i < n; i++)
     for (int j = 0; j < P[i].size(); j++)
@@ -28,7 +26,7 @@ vector < double > PolyUnion(vector < vector < Pt >> & P) {
         P[i][(j + 1) % P[i].size()]
       });
   auto cmp = [ & ](Line & l, Line & r) {
-    Pt u = l.v, v = l.v;
+    Pt u = l.e - l.s, v = r.e - r.s;
     if (argcmp(u, v)) return true;
     if (argcmp(v, u)) return false;
     return PtSide(l.s, r) < 0;
@@ -53,7 +51,7 @@ vector < double > PolyUnion(vector < vector < Pt >> & P) {
       }
     }
     sort(all(event), [ & ](auto i, auto j) {
-      return (L.s - i.first) * (L.s - L.e) < (L.s - j.second) * (L.s - L.e);
+      return (L.s - i.first) * (L.s - L.e) < (L.s - j.first) * (L.s - L.e);
     });
     int cov = 0, tag = 0;
     Pt lst {
