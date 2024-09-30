@@ -1,3 +1,4 @@
+// test RE compile: g++ a.cpp -fsanitize=undefined -o a
 #include<bits/stdc++.h>
 #define int long long
 #define mod 1000000007

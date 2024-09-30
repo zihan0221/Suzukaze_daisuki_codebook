@@ -19,8 +19,8 @@ struct Pt {
     return x*a.x + y*a.y;  }
   ld operator^(const Pt &a) const {
     return x*a.y - y*a.x;  }
-  bool operator<(const Pt &a) const {
-    return x < a.x || (x == a.x && y < a.y); }
+  auto operator<=>(const Pt &a) const {
+    return (x != a.x) ? x <=> a.x : y <=> a.y; }
     //return dcmp(x-a.x) < 0 || (dcmp(x-a.x) == 0 && dcmp(y-a.y) < 0); }
   bool operator==(const Pt &a) const {
     return dcmp(x-a.x) == 0 && dcmp(y-a.y) == 0;  }
