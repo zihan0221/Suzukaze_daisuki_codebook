@@ -1,4 +1,4 @@
-double cross(Pt o, Pt a, Pt b){
+auto cross(Pt o, Pt a, Pt b){
   return (a-o) ^ (b-o);
 }
 void convex_hull(vector<Pt> pt, vector<Pt>& hull){
