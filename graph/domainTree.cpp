@@ -1,5 +1,5 @@
 #define MXN 200005
-struct DominatorTree{ // O(N)
+struct DominatorTree{ // O(N) 1-base
 #define REP(i,s,e) for(int i=(s);i<=(e);i++)
 #define REPD(i,s,e) for(int i=(s);i>=(e);i--)
   int n , m , s;

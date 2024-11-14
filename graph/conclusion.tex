@@ -1,0 +1,23 @@
+\begin{itemize}
+    \item 2-SAT :\\
+     $(a_i \vee a_j) = true$ $ \forall (i,j) $ \\
+     對於任意限制 $(x \vee y)$ \\
+     建兩條有向邊 (要多編號$\neg x$)\\
+     $x\rightarrow\neg y$ and $y\rightarrow\neg x$ \\
+     跑scc\\
+     scc.bln[$x$] $<$ scc.bln[$\neg x$] $\Leftrightarrow$ $x$ is true \\
+     scc.bln[$\neg x$] $<$ scc.bln[$x$] $\Leftrightarrow$ $x$ is false \\
+     $\exists x $ which scc.bln[$x$] $==$ scc.bln[$\neg x$] $\Leftrightarrow$ 無解\\
+    \item 差分約束 :\\
+    $n$ 個變數及 $m$ 個約束條件\\
+    求滿足所有 $x_j - x_i \leq b_k$ $(i,j \in [1,n], k \in [1,m])$\\
+    的一組 $x_1$ ... $x_n$ \\
+    可轉成 $x_j - x_i \leq b_k$ $\rightarrow$ $x_j \leq x_i + b_k$ \\
+    結論就是使得所有 $x_j$ 變小以滿足上式 \\
+    建邊跑SPFA/Bellman  \\
+    要多建起點 $s$ 連到所有 $i$ 且邊權 $0$, dis[s] = 0 \\
+    有負環則無解，否則起點到所有 $i$ 的距離為一組解 \\
+    $x_j - x_i \leq k \Rightarrow$ addEdge $i\stackrel{k}{\longrightarrow}j$ \\
+    $x_j - x_i \geq k \Rightarrow$ addEdge $j\stackrel{-k}{\longrightarrow}i$ \\
+    $x_j = x_i \Rightarrow$ addEdge $i\stackrel{0}{\longrightarrow}j$ and $j\stackrel{0}{\longrightarrow}i$ \\
+\end{itemize}

@@ -158,12 +158,12 @@ stringstyle=\itshape\color{Green4},
 \lstinputlisting{geometry/closest_pair_of_points.cpp}
 \subsection{凸包}
 \lstinputlisting{geometry/convex_hull.cpp}
-\subsection{兩直線交點}
+\subsection{線線交點}
 \lstinputlisting{geometry/intersection_of_two_lines.cpp}
-\subsection{兩線段交點}
+\subsection{線段線段交點}
 \lstinputlisting{geometry/intersection_of_two_segments.cpp}
-\subsection{李超線段樹}
-\lstinputlisting{geometry/li_chao_seg_tree.cpp}
+%\subsection{李超線段樹}
+%\lstinputlisting{geometry/li_chao_seg_tree.cpp}
 \subsection{最小包覆圓}
 \lstinputlisting{geometry/minimal_circle.cpp}
 \subsection{最小包覆球}
@@ -186,6 +186,8 @@ stringstyle=\itshape\color{Green4},
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{圖論}
+\subsection{DSU on Tree}
+\lstinputlisting{graph/DSUonTree.cpp}
 \subsection{BCC}
 \lstinputlisting{graph/bcc.cpp}
 \subsection{重心剖分}
@@ -206,11 +208,14 @@ stringstyle=\itshape\color{Green4},
 \lstinputlisting{graph/domainTree.cpp}
 \subsection{曼哈頓最小生成樹}
 \lstinputlisting{graph/ManhattanMST.cpp}
-
+\subsection{kShortestPath O(knlogn)}
+\lstinputlisting{graph/kShortestPath.cpp}
 \subsection{2-SAT}
 \input{graph/twoSAT.tex}
 \subsection{差分約束}
 \input{graph/system_of_differences.tex}
+\subsection{結論}
+\input{graph/conclusion.tex}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{數論}
 \subsection{離散根號}
@@ -277,6 +282,73 @@ stringstyle=\itshape\color{Green4},
 \lstinputlisting{other/hibert_curve.cpp}
 \subsection{模擬退火}
 \lstinputlisting{other/simulated_annealing.cpp}   
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{geo_Miaotomata}
+    \subsection{Point}
+    \lstinputlisting{geo_Miaotomata/Point.cpp}
+
+    \subsection{Line}
+    \lstinputlisting{geo_Miaotomata/Line.cpp}
+
+    \subsection{Circle}
+    \lstinputlisting{geo_Miaotomata/Circle.cpp}
+
+    \subsection{圓多邊形面積}
+    \lstinputlisting{geo_Miaotomata/AreaOfCirclePolygon.cpp}
+
+    \subsection{圓三角形面積}
+    \lstinputlisting{geo_Miaotomata/AreaOfCircleTriangle.cpp}
+
+    \subsection{半平面交}
+    \lstinputlisting{geo_Miaotomata/HalfPlaneIntersection.cpp}
+
+    \subsection{圓線交}
+    \lstinputlisting{geo_Miaotomata/IntersectionOfCircleLine.cpp}
+
+    \subsection{圓圓交}
+    \lstinputlisting{geo_Miaotomata/IntersectionOfCircles.cpp}
+
+    \subsection{線線交}
+    \lstinputlisting{geo_Miaotomata/IntersectionOfLines.cpp}
+
+    \subsection{ConvexHull}
+    \lstinputlisting{geo_Miaotomata/ConvexHull.cpp}
+
+    \subsection{Hulltrick}
+    \lstinputlisting{geo_Miaotomata/ConvexHulltrick.cpp}
+
+    \subsection{點線距}
+    \lstinputlisting{geo_Miaotomata/PointToSegmentDistance.cpp}
+
+    \subsection{MEC}
+    \lstinputlisting{geo_Miaotomata/MinimalEnclosingCircle.cpp}
+
+    \subsection{MEC2}
+    \lstinputlisting{geo_Miaotomata_backup/MEC.cpp}
+
+    \subsection{旋轉卡尺}
+    \lstinputlisting{geo_Miaotomata/RotatingCalipers.cpp}
+    
+    \subsection{Minkowski}
+    \lstinputlisting{geo_Miaotomata/Minkowski.cpp}
+
+    \subsection{PointInPolygon}
+    \lstinputlisting{geo_Miaotomata/PointInPolygon.cpp}
+
+    \subsection{UnionOfCircles}
+    \lstinputlisting{geo_Miaotomata/UnionOfCircles.cpp}
+
+    \subsection{UnionOfPolygons}
+    \lstinputlisting{geo_Miaotomata/UnionOfPolygons.cpp}
+
+    \subsection{圓公切線}
+    \lstinputlisting{geo_Miaotomata/TangentLinesOfCircles.cpp}
+
+    \subsection{點圓切線}
+    \lstinputlisting{geo_Miaotomata/TangentLinesOfCirclePoint.cpp}
+
+    \subsection{最近點對}
+    \lstinputlisting{geo_Miaotomata/ClosestPair.cpp}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \makeatletter
 \def\grd@save@target#1{%
